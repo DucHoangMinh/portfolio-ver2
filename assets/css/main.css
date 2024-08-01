@@ -1273,3 +1273,37 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+.skill-name{
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.skill-item{
+  padding: 8px 8px;
+  margin: 4px 4px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+}
+.skill-item:hover{
+  background-color: gray;
+  color: white;
+}
+.skill-item p {
+  margin: 2px;
+}
+.big-skill {
+  margin-bottom: 12px;
+}
+.skill-icon {
+  padding: 8px;
+  margin-right: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: grey;
+  color: white;
+}
+.skill-icon i{
+  font-weight: bold;
+}
