@@ -33,6 +33,44 @@
 
   });
 
+  document.getElementById("submit_msg").addEventListener('click', () => {
+    const name = document.getElementById("name-field").value
+    const email = document.getElementById("email-field").value
+    const subject = document.getElementById("subject-field").value
+    const message = document.getElementById("message-field").value
+
+    if(message == '' || message == null || name == '' || name == null){
+      alert('You need to input at least name and message!')
+      return
+    }
+
+    // Tạo đối tượng dữ liệu để gửi
+    const data = {
+      name: name,
+      email: email,
+      subject: subject,
+      message: message
+  };
+
+  // Gửi yêu cầu API
+  fetch('https://send-msg-to-tele.vercel.app/snd_msg_from_sb', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  }).then(response => {
+      if (!response.ok) {
+          throw new Error('Network response was not ok');
+      }
+      return response.json();
+  }).then(data => {
+      console.log('Success:', data);
+      alert('Message sent to Duck. Thank you <3')
+  }).catch((error) => {
+      console.error('Error:', error);
+  });
+  })
   /**
    * Toggle mobile nav dropdowns
    */
