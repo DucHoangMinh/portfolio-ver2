@@ -66,6 +66,10 @@
       return response.json();
   }).then(data => {
       console.log('Success:', data);
+      document.getElementById("name-field").value = ''
+      document.getElementById("email-field").value = ''
+      document.getElementById("subject-field").value = ''
+      document.getElementById("message-field").value = ''
       alert('Message sent to Duck. Thank you <3')
   }).catch((error) => {
       console.error('Error:', error);
